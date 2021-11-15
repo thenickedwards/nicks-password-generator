@@ -7,13 +7,22 @@ var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M"
 var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var specialChars = ["`", "-", "=", ";", "'", ",", ".", "~", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "+", ":", "?"];
+var availableChars = ""
 
 // Function begins
 function generatePassword() {
   var password = ""
   console.log("Generate a password triggered! Starting with a blank password.");
 
-
+// Prompt user for how many characters, must be 8-128 [or ask again???]
+// Confirm if user wants to use uppercase letters, if yes add one to string and add uppercase array to available characters array
+// Confirm if user wants to use lowercase letters, if yes add one to string and add lowercase array to available characters array
+// Confirm if user wants to use numbers, if yes add one to string and add numbers array to available characters array
+// Confirm if user wants to use special characters, if yes add one to string and add special characters array to available characters array
+// Randomly select character from available chracters
+// Repeat until desired length
+// Randomize password
+// Return password
 
 
 
