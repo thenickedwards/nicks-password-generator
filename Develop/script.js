@@ -15,6 +15,11 @@ function generatePassword() {
   console.log("Generate a password triggered! Starting with a blank password.");
 
 // Prompt user for how many characters, must be 8-128 [or ask again???]
+var pwLength=prompt("Let's generate a password for you! I can create a password from 8 - 128 characters. How long would you like your password to be?");
+
+
+
+
 // Confirm if user wants to use uppercase letters, if yes add one to string and add uppercase array to available characters array
 // Confirm if user wants to use lowercase letters, if yes add one to string and add lowercase array to available characters array
 // Confirm if user wants to use numbers, if yes add one to string and add numbers array to available characters array
@@ -22,10 +27,9 @@ function generatePassword() {
 // Randomly select character from available chracters
 // Repeat until desired length
 // Randomize password
+
+
 // Return password
-
-
-
   return password
 }
 
