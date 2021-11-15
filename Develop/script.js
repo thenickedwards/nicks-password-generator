@@ -37,8 +37,40 @@ if (isUpperCase == true) {
 }
 
 // Confirm if user wants to use lowercase letters, if yes add one to string and add lowercase array to available characters array
+var isLowerCase=confirm("Should your password include lowercase letters?")
+
+if (isLowerCase == true) {
+  randomLowerCase = lowerCase[Math.floor(Math.random() * lowerCase.length)];
+  password = randomLowerCase.concat(password);
+  availableChars = availableChars.concat(lowerCase);
+  console.log("This password may include: " + availableChars);
+  console.log("This password will include: " + password);
+}
+
 // Confirm if user wants to use numbers, if yes add one to string and add numbers array to available characters array
+var isNumbers=confirm("Should your password include numbers?")
+
+if (isNumbers == true) {
+  randomNumber = numbers[Math.floor(Math.random() * numbers.length)];
+  password = randomNumber.concat(password);
+  availableChars = availableChars.concat(numbers);
+  console.log("This password may include: " + availableChars);
+  console.log("This password will include: " + password);
+}
+
 // Confirm if user wants to use special characters, if yes add one to string and add special characters array to available characters array
+var isSpecialChars=confirm("Should your password include special characters?")
+
+if (isSpecialChars == true) {
+  randomSpecialChar = specialChars[Math.floor(Math.random() * specialChars.length)];
+  password = randomSpecialChar.concat(password);
+  availableChars = availableChars.concat(specialChars);
+  console.log("This password may include: " + availableChars);
+  console.log("This password will include: " + password);
+}
+
+
+
 // Randomly select character from available chracters
 // Repeat until desired length
 // Randomize password
