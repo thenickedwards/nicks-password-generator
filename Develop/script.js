@@ -14,6 +14,7 @@ function generatePassword() {
   var password = ""
   console.log("Generate a password triggered! Starting with a blank password.");
 
+
 // Prompt user for how many characters, must be 8-128 [or ask again???]
 var pwLength=prompt("Let's generate a password for you! I can create a password from 8 - 128 characters. How long would you like your password to be?");
 
@@ -69,8 +70,6 @@ if (isSpecialChars == true) {
   console.log("This password will include: " + password);
 }
 
-
-
 // Randomly select character from available chracters
 // Repeat until desired length
 for (i = 0; i < pwLength.length; i++) {
@@ -82,10 +81,11 @@ for (i = 0; i < pwLength.length; i++) {
 
 // Randomize password
 
-
 // Return password
   return password
 }
+
+
 
 // Write password to the #password input
 function writePassword() {
