@@ -73,6 +73,13 @@ if (isSpecialChars == true) {
 
 // Randomly select character from available chracters
 // Repeat until desired length
+for (i = 0; i < pwLength.length; i++) {
+  randomAvailableChar = availableChars[Math.floor(Math.random() * availableChars.length)];
+  password = randomAvailableChar.concat(password);
+  console.log("This password will include: " + password);
+}
+
+
 // Randomize password
 
 
