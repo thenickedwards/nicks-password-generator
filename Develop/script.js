@@ -25,9 +25,17 @@ if (pwLength >= 8 && pwLength <= 128) {
   // pwLength=prompt("Let's generate a password for you! I can create a password from 8 - 128 characters. How long would you like your password to be?"); 
 }
 
-
-
 // Confirm if user wants to use uppercase letters, if yes add one to string and add uppercase array to available characters array
+var isUpperCase=confirm("Should your password include uppercase letters?")
+
+if (isUpperCase == true) {
+  randomUpperCase = upperCase[Math.floor(Math.random() * upperCase.length)];
+  password = randomUpperCase.concat(password);
+  availableChars = availableChars.concat(upperCase);
+  console.log("This password may include: " + availableChars);
+  console.log("This password will include: " + password);
+}
+
 // Confirm if user wants to use lowercase letters, if yes add one to string and add lowercase array to available characters array
 // Confirm if user wants to use numbers, if yes add one to string and add numbers array to available characters array
 // Confirm if user wants to use special characters, if yes add one to string and add special characters array to available characters array
