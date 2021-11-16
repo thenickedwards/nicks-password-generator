@@ -14,77 +14,84 @@ function generatePassword() {
   var password = ""
   console.log("Generate a password triggered! Starting with a blank password.");
 
-
 // Prompt user for how many characters, must be 8-128 [or ask again???]
-var pwLength=prompt("Let's generate a password for you! I can create a password from 8 - 128 characters. How long would you like your password to be?");
+  var pwLength=prompt("Let's generate a password for you! I can create a password from 8 - 128 characters. How long would you like your password to be?");
 
-if (pwLength >= 8 && pwLength <= 128) {
-  console.log("This password is going to be " + pwLength + " characters.");
-} else {
-  alert("Hey now, " + pwLength + " isn't between 8 - 128 characters. Let's try again!");
+  if (pwLength >= 8 && pwLength <= 128) {
+    console.log("This password is going to be " + pwLength + " characters.");
+  } else {
+    alert("Hey now, " + pwLength + " isn't between 8 - 128 characters. Let's try again!");
   // Does this part re-presenitng question?
-  generatePassword();
+  // generatePassword();
   // pwLength=prompt("Let's generate a password for you! I can create a password from 8 - 128 characters. How long would you like your password to be?"); 
-}
+  }
 
 // Confirm if user wants to use uppercase letters, if yes add one to string and add uppercase array to available characters array
-var isUpperCase=confirm("Should your password include uppercase letters?")
+  var isUpperCase=confirm("Should your password include uppercase letters?")
 
-if (isUpperCase == true) {
-  randomUpperCase = upperCase[Math.floor(Math.random() * upperCase.length)];
-  // password = randomUpperCase.concat(password);
-  password += randomUpperCase
-  // availableChars = availableChars.concat(upperCase);
-  availableChars.push(...upperCase);
-  // availableChars.push.apply(availableChars, upperCase);
-  console.log("This password may include: " + availableChars);
-  console.log("This password will include: " + password);
-}
+  if (isUpperCase == true) {
+    randomUpperCase = upperCase[Math.floor(Math.random() * upperCase.length)];
+    // password = randomUpperCase.concat(password);
+    password += randomUpperCase
+    // availableChars = availableChars.concat(upperCase);
+    availableChars.push(...upperCase);
+    // availableChars.push.apply(availableChars, upperCase);
+    console.log("This password may include: " + availableChars);
+    console.log("This password will include: " + password);
+  }
 
 // Confirm if user wants to use lowercase letters, if yes add one to string and add lowercase array to available characters array
-var isLowerCase=confirm("Should your password include lowercase letters?")
+  var isLowerCase=confirm("Should your password include lowercase letters?")
 
-if (isLowerCase == true) {
-  randomLowerCase = lowerCase[Math.floor(Math.random() * lowerCase.length)];
-  // password = randomLowerCase.concat(password);
-  password += randomLowerCase;
-  availableChars.push(...lowerCase);
-  console.log("This password may include: " + availableChars);
-  console.log("This password will include: " + password);
-}
+  if (isLowerCase == true) {
+    randomLowerCase = lowerCase[Math.floor(Math.random() * lowerCase.length)];
+    // password = randomLowerCase.concat(password);
+    password += randomLowerCase;
+    availableChars.push(...lowerCase);
+    console.log("This password may include: " + availableChars);
+    console.log("This password will include: " + password);
+  }
 
 // Confirm if user wants to use numbers, if yes add one to string and add numbers array to available characters array
-var isNumbers=confirm("Should your password include numbers?")
+  var isNumbers=confirm("Should your password include numbers?")
 
-if (isNumbers == true) {
-  randomNumber = numbers[Math.floor(Math.random() * numbers.length)];
-  // password = randomNumber.concat(password);
-  password += randomNumber;
-  availableChars.push(...numbers);
-  console.log("This password may include: " + availableChars);
-  console.log("This password will include: " + password);
-}
+  if (isNumbers == true) {
+    randomNumber = numbers[Math.floor(Math.random() * numbers.length)];
+    // password = randomNumber.concat(password);
+    password += randomNumber;
+    availableChars.push(...numbers);
+    console.log("This password may include: " + availableChars);
+    console.log("This password will include: " + password);
+  }
 
 // Confirm if user wants to use special characters, if yes add one to string and add special characters array to available characters array
-var isSpecialChars=confirm("Should your password include special characters?")
+  var isSpecialChars=confirm("Should your password include special characters?")
 
-if (isSpecialChars == true) {
-  randomSpecialChar = specialChars[Math.floor(Math.random() * specialChars.length)];
-  // password = randomSpecialChar.concat(password);
-  password += randomSpecialChar;
-  availableChars.push(...specialChars);
-  console.log("This password may include: " + availableChars);
-  console.log("This password will include: " + password);
-}
+  if (isSpecialChars == true) {
+    randomSpecialChar = specialChars[Math.floor(Math.random() * specialChars.length)];
+    // password = randomSpecialChar.concat(password);
+    password += randomSpecialChar;
+    availableChars.push(...specialChars);
+    console.log("This password may include: " + availableChars);
+    console.log("This password will include: " + password);
+  }
 
 // Randomly select character from available chracters
 // Repeat until desired length
-for (i = 0; i < pwLength.length; i++) {
-  randomAvailableChar = availableChars[Math.floor(Math.random() * availableChars.length)];
-  password = randomAvailableChar.concat(password);
-  console.log("This password will include: " + password);
-}
+var neededChars = pwLength-password.length
 
+  function addCharacter() {
+    // if (password.length < pwLength)
+      for (i = 0; i < neededChars; i++) {
+        randomAvailableChar = availableChars[Math.floor(Math.random() * availableChars.length)];
+        password += randomAvailableChar;
+        console.log("This password will include: " + password);
+      }
+  }
+
+  if (password.length < pwLength) {
+    addCharacter();
+  }
 
 // Randomize password
 
