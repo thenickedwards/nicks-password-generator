@@ -31,7 +31,8 @@ var isUpperCase=confirm("Should your password include uppercase letters?")
 
 if (isUpperCase == true) {
   randomUpperCase = upperCase[Math.floor(Math.random() * upperCase.length)];
-  password = randomUpperCase.concat(password);
+  // password = randomUpperCase.concat(password);
+  password += randomUpperCase
   // availableChars = availableChars.concat(upperCase);
   availableChars.push(...upperCase);
   // availableChars.push.apply(availableChars, upperCase);
@@ -44,7 +45,8 @@ var isLowerCase=confirm("Should your password include lowercase letters?")
 
 if (isLowerCase == true) {
   randomLowerCase = lowerCase[Math.floor(Math.random() * lowerCase.length)];
-  password = randomLowerCase.concat(password);
+  // password = randomLowerCase.concat(password);
+  password += randomLowerCase;
   availableChars.push(...lowerCase);
   console.log("This password may include: " + availableChars);
   console.log("This password will include: " + password);
@@ -55,7 +57,8 @@ var isNumbers=confirm("Should your password include numbers?")
 
 if (isNumbers == true) {
   randomNumber = numbers[Math.floor(Math.random() * numbers.length)];
-  password = randomNumber.concat(password);
+  // password = randomNumber.concat(password);
+  password += randomNumber;
   availableChars.push(...numbers);
   console.log("This password may include: " + availableChars);
   console.log("This password will include: " + password);
@@ -66,7 +69,8 @@ var isSpecialChars=confirm("Should your password include special characters?")
 
 if (isSpecialChars == true) {
   randomSpecialChar = specialChars[Math.floor(Math.random() * specialChars.length)];
-  password = randomSpecialChar.concat(password);
+  // password = randomSpecialChar.concat(password);
+  password += randomSpecialChar;
   availableChars.push(...specialChars);
   console.log("This password may include: " + availableChars);
   console.log("This password will include: " + password);
