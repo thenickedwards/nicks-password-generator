@@ -7,7 +7,7 @@ var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M"
 var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var specialChars = ["`", "-", "=", ";", "'", ",", ".", "~", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "+", ":", "?"];
-var availableChars = ""
+var availableChars = [];
 
 // Function begins
 function generatePassword() {
@@ -32,7 +32,9 @@ var isUpperCase=confirm("Should your password include uppercase letters?")
 if (isUpperCase == true) {
   randomUpperCase = upperCase[Math.floor(Math.random() * upperCase.length)];
   password = randomUpperCase.concat(password);
-  availableChars = availableChars.concat(upperCase);
+  // availableChars = availableChars.concat(upperCase);
+  availableChars.push(...upperCase);
+  // availableChars.push.apply(availableChars, upperCase);
   console.log("This password may include: " + availableChars);
   console.log("This password will include: " + password);
 }
@@ -43,7 +45,7 @@ var isLowerCase=confirm("Should your password include lowercase letters?")
 if (isLowerCase == true) {
   randomLowerCase = lowerCase[Math.floor(Math.random() * lowerCase.length)];
   password = randomLowerCase.concat(password);
-  availableChars = availableChars.concat(lowerCase);
+  availableChars.push(...lowerCase);
   console.log("This password may include: " + availableChars);
   console.log("This password will include: " + password);
 }
@@ -54,7 +56,7 @@ var isNumbers=confirm("Should your password include numbers?")
 if (isNumbers == true) {
   randomNumber = numbers[Math.floor(Math.random() * numbers.length)];
   password = randomNumber.concat(password);
-  availableChars = availableChars.concat(numbers);
+  availableChars.push(...numbers);
   console.log("This password may include: " + availableChars);
   console.log("This password will include: " + password);
 }
@@ -65,7 +67,7 @@ var isSpecialChars=confirm("Should your password include special characters?")
 if (isSpecialChars == true) {
   randomSpecialChar = specialChars[Math.floor(Math.random() * specialChars.length)];
   password = randomSpecialChar.concat(password);
-  availableChars = availableChars.concat(specialChars);
+  availableChars.push(...specialChars);
   console.log("This password may include: " + availableChars);
   console.log("This password will include: " + password);
 }
