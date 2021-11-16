@@ -22,7 +22,8 @@ if (pwLength >= 8 && pwLength <= 128) {
   console.log("This password is going to be " + pwLength + " characters.");
 } else {
   alert("Hey now, " + pwLength + " isn't between 8 - 128 characters. Let's try again!");
-  // This part isn't re-presenitng question
+  // Does this part re-presenitng question?
+  generatePassword();
   // pwLength=prompt("Let's generate a password for you! I can create a password from 8 - 128 characters. How long would you like your password to be?"); 
 }
 
