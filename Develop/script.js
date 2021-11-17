@@ -86,15 +86,14 @@ function generatePassword() {
       addCharacter();
     }
 
-    // Clear available characters array for next time :)
+    // Clear available characters array so page can be used again immediately
     availableChars = [];
-    console.log("Available characters are: " + availableChars);
-    
+
     // Randomize characters selected for password
     var password = password.split('').sort(function(){return 0.5-Math.random()}).join('');
 
     // Return password
-    return password
+    return password;
 
   }
 }
@@ -106,7 +105,6 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
 }
 
 // Add event listener to generate button
