@@ -15,17 +15,17 @@ function generatePassword() {
   console.log("Generate a password triggered! Starting with a blank password.");
 
   // Prompt user for how many characters, must be 8-128 or ask again
-  var pwLength=prompt("Let's generate a password for you! I can create a password from 8 - 128 characters. How long would you like your password to be?");
+  var pwLength=prompt("Let's generate a password for you!\nI can create a password from 8 - 128 characters. How long would you like your password to be?");
 
   if (pwLength < 8 || pwLength > 128) {
     alert("Hey now, " + pwLength + " isn't between 8 - 128 characters. Let's try again!");
-    console.log("About to re-run generatePassword function.")
+    console.log("Password with invalid number of characters.")
   } else {
     console.log("This password is going to be " + pwLength + " characters.");
-    
+    var password = ""
 
     // Confirm if user wants to use uppercase letters, if yes add one to string and add uppercase array to available characters array
-    var isUpperCase=confirm("Should your password include uppercase letters?")
+    var isUpperCase=confirm("Should your password include uppercase letters?\n(Click OK for yes or Cancel for no.)")
 
     if (isUpperCase == true) {
       randomUpperCase = upperCase[Math.floor(Math.random() * upperCase.length)];
@@ -36,7 +36,7 @@ function generatePassword() {
     }
 
     // Confirm if user wants to use lowercase letters, if yes add one to string and add lowercase array to available characters array
-    var isLowerCase=confirm("Should your password include lowercase letters?")
+    var isLowerCase=confirm("Should your password include lowercase letters?\n(Click OK for yes or Cancel for no.)")
 
     if (isLowerCase == true) {
       randomLowerCase = lowerCase[Math.floor(Math.random() * lowerCase.length)];
@@ -47,7 +47,7 @@ function generatePassword() {
     }
 
     // Confirm if user wants to use numbers, if yes add one to string and add numbers array to available characters array
-    var isNumbers=confirm("Should your password include numbers?")
+    var isNumbers=confirm("Should your password include numbers?\n(Click OK for yes or Cancel for no.)")
 
     if (isNumbers == true) {
       randomNumber = numbers[Math.floor(Math.random() * numbers.length)];
@@ -58,7 +58,7 @@ function generatePassword() {
     }
 
     // Confirm if user wants to use special characters, if yes add one to string and add special characters array to available characters array
-    var isSpecialChars=confirm("Should your password include special characters?")
+    var isSpecialChars=confirm("Should your password include special characters?\n(Click OK for yes or Cancel for no.)")
 
     if (isSpecialChars == true) {
       randomSpecialChar = specialChars[Math.floor(Math.random() * specialChars.length)];
@@ -73,7 +73,6 @@ function generatePassword() {
     var neededChars = pwLength-password.length
 
     function addCharacter() {
-      // if (password.length < pwLength)
         for (i = 0; i < neededChars; i++) {
           randomAvailableChar = availableChars[Math.floor(Math.random() * availableChars.length)];
           password += randomAvailableChar;
@@ -85,12 +84,11 @@ function generatePassword() {
       addCharacter();
     }
 
-    // Randomize password
+    // Randomize characters selected for password
+    var password = password.split('').sort(function(){return 0.5-Math.random()}).join('');
 
     // Return password
     return password
-
-  
 
   }
 }
