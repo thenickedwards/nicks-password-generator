@@ -72,7 +72,7 @@ function generatePassword() {
     // Determine how many more characters needed
     // Randomly select character from available charcters
     // Repeat until desired length
-    var neededChars = pwLength-password.length
+    var neededChars = pwLength - password.length
 
     function addCharacter() {
         for (i = 0; i < neededChars; i++) {
@@ -86,6 +86,10 @@ function generatePassword() {
       addCharacter();
     }
 
+    // Clear available characters array for next time :)
+    availableChars = [];
+    console.log("Available characters are: " + availableChars);
+    
     // Randomize characters selected for password
     var password = password.split('').sort(function(){return 0.5-Math.random()}).join('');
 
@@ -94,8 +98,6 @@ function generatePassword() {
 
   }
 }
-
-
 
 // Write password to the #password input
 function writePassword() {
