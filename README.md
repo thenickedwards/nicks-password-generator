@@ -20,4 +20,4 @@ URL for GitHub repo: https://github.com/thenickedwards/nicks-password-generator
 
 ## Video of Page
 * Link to video of Nick Edwards' password generator: https://www.awesomescreenshot.com/video/6074274?key=c1b541f99c6fbbb85b430093ecc523f6
-* [Video file of Nick Edwards' password generator.](./Develop/Nick's_Password_Generator.mp4)
+* [Video file of Nick Edwards' password generator.](Develop/Nick's_Password_Generator.mp4)
