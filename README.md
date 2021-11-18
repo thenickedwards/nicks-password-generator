@@ -14,10 +14,10 @@ JavaScript written per accepatance criteria listed in [W3-hw_README.md](W3-hw_RE
 * After password is generated, generated password appears on page
 
 ## Links
-URL for published page: 
+URL for published page: https://thenickedwards.github.io/nicks-password-generator/
 
-URL for GitHub repo: 
+URL for GitHub repo: https://github.com/thenickedwards/nicks-password-generator
 
-## Screenshot of Page
-* NEED UPDATE!!!
-![Screenshot of Nick Edwards' portfolio webpage.](screencapture-nick_edwards-portfolio.png)
+## Video of Page
+* ![Link to video of Nick Edwards' password generator.](https://www.awesomescreenshot.com/video/6074274?key=c1b541f99c6fbbb85b430093ecc523f6)
+* ![Video file of Nick Edwards' password generator.](./Develop/Nick's_Password_Generator.mp4)
