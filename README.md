@@ -21,3 +21,5 @@ URL for GitHub repo: https://github.com/thenickedwards/nicks-password-generator
 ## Video of Page
 * [Video file of Nick Edwards' password generator.](https://www.awesomescreenshot.com/video/6074274?key=c1b541f99c6fbbb85b430093ecc523f6)
 * MP4 also avaialble in repo under Develop folder
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
